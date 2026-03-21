@@ -1,0 +1,19 @@
+name: fetch-repository-stats
+on:
+  schedule:
+    # 每天 UTC 时间 23:00 运行一次（建议选在一天快结束的时候）
+    - cron: "0 23 * * *"
+  workflow_dispatch: # 允许手动点击运行
+
+jobs:
+  run-ghrs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run-ghrs
+        uses: jgehrcke/github-repo-stats@RELEASE
+        with:
+          # 要统计的仓库（格式：用户名/仓库名）
+          # 如果就是当前仓库，可以删掉这一行或保持默认
+          repository: icip-cas/PPTAgent
+          # 引用刚才在 Secret 里创建的 Token
+          ghtoken: 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
