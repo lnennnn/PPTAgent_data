@@ -2,7 +2,7 @@ name: fetch-repository-stats
 on:
   schedule:
     # 每天 UTC 时间 23:00 运行一次（建议选在一天快结束的时候）
-    - cron: "10 16 * * *"
+    - cron: "15 16 * * *"
   workflow_dispatch: # 允许手动点击运行
 
 jobs:
